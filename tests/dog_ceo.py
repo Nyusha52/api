@@ -11,8 +11,6 @@ from data.dog_ceo_data import breeds_list, expected_sub_breeds_list
                           ('5', 5),
                           ('100', 50)])
 def test_count_photo_positive(input_count, expected_count):
-    """
-    """
     res = requests.get('https://dog.ceo/api/breeds/image/random/{}'.format(input_count))
     assert res.status_code == 200
     assert len(res.json()['message']) == expected_count
@@ -21,8 +19,6 @@ def test_count_photo_positive(input_count, expected_count):
 @pytest.mark.xfail(strict=404)
 @pytest.mark.parametrize('input_count', ['-3', 'a', '0'])
 def test_count_photo_negative(input_count):
-    """
-    """
     res = requests.get('https://dog.ceo/api/breeds/image/random/{}'.format(input_count))
     assert res.status_code == 404
 
@@ -39,14 +35,12 @@ def test_sub_breeds(breeds, expected_sub_breeds):
 
 
 def test_count_img():
-    """ """
     res = requests.get('https://dog.ceo/api/breed/hound/images')
     assert res.status_code == 200
     assert len(res.json()['message']) == 1000
 
 
 def test_img_type():
-    """ """
     res = requests.get('https://dog.ceo/api/breed/hound/images')
 
     schema = {"type": "object",
