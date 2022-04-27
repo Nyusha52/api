@@ -11,4 +11,3 @@ expected_sub_breeds_list = [
     [],
     ['afghan', 'basset', 'blood', 'english', 'ibizan', 'plott', 'walker']
 ]
-

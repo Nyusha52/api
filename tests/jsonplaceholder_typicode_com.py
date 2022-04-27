@@ -49,6 +49,7 @@ def test_edit_post():
     res1 = requests.put('https://jsonplaceholder.typicode.com/posts/1', headers=headers, json=body)
     assert res1.status_code == 404
 
+
 @pytest.mark.xfail(strict=404)
 def test_edit_post_another_user():
     res = requests.put('https://jsonplaceholder.typicode.com/posts/1', headers=headers, json=body1)
